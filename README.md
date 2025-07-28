@@ -1,14 +1,22 @@
-In the Pokemon game there are 18 different types, and each Pokemon has either 1 or 2 of these types.
-Each type has its own set of weaknesses (x2 damage) and resistances (x0.5 damage). 
-- Water resists fire but is weak to grass meaning:
-  Water type Pokemon take half damage from fire type attacks but take twice as much damage from grass type attacks)
-When the Pokemon has 2 types the weaknesses and resistances are multiplied together. 
-- Ground is also weak to grass so Water/Ground type Pokemon will take x4 damage from grass type attacks
+# Pokemon Team Builder
 
-The player is only allowed 6 Pokemon on a team so this is very limiting if you want your team to be able to resist all 18 of the different types. This application helps to find which types to add or replace to make the team resist all types.
+A modern, interactive Pokemon team builder built with **Next.js**. Search for Pokemon by name, filter by tier, view team type resistances, and get smart suggestions to complete your team.
 
-Input a Pokemon team to find out which types the team resist.
-If the given team resists all types, no recommendation will be given.
-If less than 6 Pokemon are given, a Pokemon type will be recommended to be added.
-If 6 pokemon are given, a Pokemon will be recommended to be replaced in order to add a better type
-The application is here: https://dhjwang.github.io/PokemonCoverage/
+- Input a Pokemon team to find out which types the team resist.
+- If the given team resists all types, no recommendation will be given.
+- If less than 6 Pokemon are given, recommendations will be generated.
+- Pokemon from a lower tier can be used in higher tiers.
+- Recommendations are based off which type combination would provide the team with the most unique resistances and chooses Pokemon with higher total base stat.
+
+You can check it out here: [https://dhjwang.github.io/PokemonCoverage/](https://dhjwang.github.io/PokemonCoverage/)
+
+## Features
+
+- Search and filter Pokemon from the full Pokedex **up to Scarlet/Violet**
+- Filter by competitive **tiers** (from Smogon)
+- View **resistances** from all types based on team composition
+- **Abilities are also taken into account** (Water Absorb, Flash Fire, etc.)
+- Intelligent **suggestions** based on current team weaknesses
+- **Bench** Pokemon dynamically (useful for VGC where you can only choose 4 of the 6 members)
+
+_Data Last updated: 7/20/25 (from [Pokemon Showdown Pokedex](https://github.com/smogon/pokemon-showdown))_
