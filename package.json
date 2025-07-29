@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "export": "next export",
-    "predeploy": "npm run build && npm run export && cp out/index.html out/404.html",
+    "predeploy": "npm run build && copy out\\index.html out\\404.html",
     "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
@@ -33,6 +32,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.1",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"

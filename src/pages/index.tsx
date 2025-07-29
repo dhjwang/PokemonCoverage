@@ -2,6 +2,7 @@ import PokemonCommand from "@/components/ui/PokemonCommand";
 import { TierFilter } from "@/components/ui/TierFilter";
 import { PokemonProvider } from "@/context/PokemonContext";
 import { Resistances } from "@/components/ui/Resistances";
+import { basePath } from "@/lib/constants";
 import Head from "next/head";
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#e8ebed" />
         <meta charSet="utf-8" />
-        <link rel="icon" href="/pokeball.png" />
+        <link rel="icon" href={`${basePath}/pokeball.png`} />
 
         <meta property="og:title" content="Pokemon Team Coverage" />
         <meta

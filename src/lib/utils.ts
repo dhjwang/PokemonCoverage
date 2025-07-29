@@ -9,14 +9,14 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 const normalizeTypeCombo = (types: string[], typeComboChart: TypeChart) => {
-  let typeKey = types.join(",");
+  const typeKey = types.join(",");
   return !typeComboChart[typeKey] ? types.slice().reverse().join(",") : typeKey;
 };
 const areEqual = (arr1: string[], arr2: string[]) => {
   const set1 = new Set(arr1);
   const set2 = new Set(arr2);
   if (set1.size !== set2.size) return false;
-  for (let item of set1) {
+  for (const item of set1) {
     if (!set2.has(item)) return false;
   }
   return true;
@@ -45,7 +45,7 @@ export const countCurrentResistances = (
   team: TeamMember[],
   pokedex: Record<string, Pokemon>
 ) => {
-  let result: Record<string, number> = {};
+  const result: Record<string, number> = {};
   for (const mon of team) {
     for (const type of Object.keys(pokedex[mon.keyName].resistances)) {
       result[type] =
@@ -104,7 +104,7 @@ export const getTypeComboSuggestions = (
         .map(([type]) => type);
       const score = newResistedTypes.length;
 
-      let typeKey = normalizeTypeCombo(types, allCombos);
+      const typeKey = normalizeTypeCombo(types, allCombos);
 
       const alreadyInBucket = (bucketScoreMap.get(score) || []).some(
         ({ typeCombo }) =>
@@ -145,7 +145,7 @@ export const getTypeComboSuggestions = (
       .sort((a, b) => b.bst - a.bst);
   }
 
-  let typeComboSuggestions = firstBucket!.slice(0, topN);
+  const typeComboSuggestions = firstBucket!.slice(0, topN);
   for (const score of sortedScores.slice(1)) {
     const bucket = bucketScoreMap.get(score)!;
     if (typeComboSuggestions.length + bucket.length > topN) {

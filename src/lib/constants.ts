@@ -2,6 +2,8 @@ export const baseTypes = `https://play.pokemonshowdown.com/sprites/types/`;
 export const circleTypes = `https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/`;
 export const miniSprites =
   "url(https://play.pokemonshowdown.com/sprites/pokemonicons-sheet.png?v19)";
+export const basePath =
+  process.env.NODE_ENV === "production" ? "/PokemonCoverage" : "";
 
 const mainImage = "https://play.pokemonshowdown.com/sprites/home-centered/";
 const candidateImage = "https://img.pokemondb.net/sprites/scarlet-violet/icon/";

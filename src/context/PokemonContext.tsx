@@ -3,7 +3,7 @@ import type { Dispatch, SetStateAction, ReactNode } from "react";
 
 import type { Pokemon, TeamMember, TypeChart } from "@/types/types";
 import { normalizePokedex } from "@/lib/utils";
-import { allTiers } from "@/lib/constants";
+import { allTiers, basePath } from "@/lib/constants";
 
 type Props = {
   children: ReactNode;
@@ -32,8 +32,8 @@ export const PokemonProvider = ({ children }: Props) => {
   useEffect(() => {
     const getData = async () => {
       const [responsePokedex, responseTypeComboChart] = await Promise.all([
-        fetch("/pokemon.json"),
-        fetch("/typeChart.json"),
+        fetch(`${basePath}/pokemon.json`),
+        fetch(`${basePath}/typeChart.json`),
       ]);
 
       const rawPokedex: Record<string, Pokemon> = await responsePokedex.json();

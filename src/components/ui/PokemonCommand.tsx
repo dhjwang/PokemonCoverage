@@ -9,7 +9,7 @@ import { useEffect, useState, useMemo, useRef, useContext } from "react";
 import { PokemonContext } from "@/context/PokemonContext";
 import { Pokemon } from "@/types/types";
 import PokemonCard from "./PokemonCard";
-import { baseTypes, miniSprites } from "@/lib/constants";
+import { baseTypes, miniSprites, basePath } from "@/lib/constants";
 
 export default function PokemonCommand({ id }: { id: string }) {
   const {
@@ -64,8 +64,7 @@ export default function PokemonCommand({ id }: { id: string }) {
       {!pokemon ? (
         <Command
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('pokeball.png')",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('${basePath}/pokeball.png')`,
           }}
           className="bg-[center_70%] bg-[length:100px_100px] bg-no-repeat"
         >
